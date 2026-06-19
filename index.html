@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CET138 Full Stack Development ePortfolio - Demonstrating HTML, CSS, Bootstrap, and JavaScript skills.">
+    <title>CET138 | Professional Full Stack Portfolio</title>
+    
+    <!-- External Dependencies: Bootstrap 5 & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body class="bg-dark text-light" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100" tabindex="0">
+
+    <!-- =========================================
+         NAVIGATION (Sticky, Glassmorphism)
+         ========================================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase tracking-wide" href="#">
+                <i class="fas fa-code me-2 text-primary"></i>Dev<span class="text-primary">Portfolio</span>
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                <span class="fas fa-bars text-white"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fs-dev">Full Stack</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#html-sec">HTML5</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#css-sec">CSS3</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bs-sec">Bootstrap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#js-sec">JavaScript</a></li>
+                </ul>
+                <div class="d-flex ms-lg-3">
+                    <button class="btn btn-outline-primary btn-sm rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Me</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#fs-dev">Full Stack</a></li>
+                <li class="nav-item"><a class="nav-link" href="#html-sec">HTML5</a></li>
+                <li class="nav-item"><a class="nav-link" href="#css-sec">CSS3</a></li>
+                <li class="nav-item"><a class="nav-link" href="#bs-sec">Bootstrap</a></li>
+                <li class="nav-item"><a class="nav-link" href="#js-sec">JavaScript</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- =========================================
+         HERO SECTION (Canvas Background)
+         ========================================= -->
+    <header id="hero" class="d-flex align-items-center position-relative overflow-hidden">
+        <!-- Interactive Canvas Background -->
+        <canvas id="particleCanvas" class="position-absolute top-0 start-0 w-100 h-100"></canvas>
+        
+        <div class="container position-relative z-2">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <span class="badge bg-primary bg-opacity-25 text-primary border border-primary mb-3 px-3 py-2 rounded-pill animate-fade-up">
+                            <i class="fas fa-graduation-cap me-2"></i>CET138 Assignment
+                        </span>
+                        <h1 class="display-2 fw-bold mb-4 text-white animate-fade-up" style="animation-delay: 0.1s;">
+                            Building the <br><span class="text-transparent bg-clip-text bg-gradient" id="typewriter">Modern Web</span>
+                        </h1>
+                        <p class="lead text-secondary mb-5 animate-fade-up" style="animation-delay: 0.2s; max-width: 600px;">
+                            A comprehensive demonstration of Full Stack Development fundamentals. Exploring the synergy between Structure, Style, and Logic.
+                        </p>
+                        <div class="d-flex gap-3 animate-fade-up" style="animation-delay: 0.3s;">
+                            <a href="#fs-dev" class="btn btn-primary btn-lg rounded-pill px-5 shadow-primary hover-lift">Start Exploring</a>
+                            <a href="#js-sec" class="btn btn-outline-light btn-lg rounded-pill px-4 hover-lift">View Logic</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <!-- Abstract Visual Card -->
+                    <div class="glass-card p-4 rounded-4 border border-secondary border-opacity-25 animate-scale-in">
+                        <div class="d-flex justify-content-between mb-4">
+                            <div class="bg-danger rounded-circle" style="width:12px; height:12px;"></div>
+                            <div class="bg-warning rounded-circle" style="width:12px; height:12px;"></div>
+                            <div class="bg-success rounded-circle" style="width:12px; height:12px;"></div>
+                        </div>
+                        <div class="font-monospace text-secondary text-sm">
+                            <p><span class="text-info">const</span> developer = {</p>
+                            <p class="ps-4">name: <span class="text-warning">"Student"</span>,</p>
+                            <p class="ps-4">skills: [<span class="text-success">"HTML"</span>, <span class="text-success">"CSS"</span>, <span class="text-success">"JS"</span>],</p>
+                            <p class="ps-4">passion: <span class="text-warning">true</span></p>
+                            <p>};</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-down position-absolute bottom-0 start-50 translate-middle-x mb-4 animate-bounce">
+            <i class="fas fa-chevron-down text-secondary"></i>
+        </div>
+    </header>
+
+    <!-- =========================================
+         WEBSITE OVERVIEW DEFINITION
+         ========================================= -->
+    <section id="overview" class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <div class="card bg-dark border-secondary text-start mx-auto shadow-lg" style="max-width: 900px;">
+                        <div class="card-header bg-secondary bg-opacity-20 text-white fw-bold">
+                            <i class="fas fa-book-open me-2"></i>Website Definition
+                        </div>
+                        <div class="card-body text-light">
+                            <p class="mb-3" style="line-height: 1.8;">
+                                This portfolio is a professional demonstration of full stack web development skills, presenting an end-to-end experience from semantic HTML structure to responsive CSS layout, modern Bootstrap components, and interactive JavaScript features.
+                            </p>
+                            <p class="mb-0" style="line-height: 1.8;">
+                                It is designed to show how each layer of a web application works together to create a polished, accessible, and maintainable user experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 1: FULL STACK DEVELOPMENT
+         ========================================= -->
+    <section id="fs-dev" class="py-5 position-relative">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">What is <span class="text-primary">Full Stack?</span></h2>
+                    <div class="card bg-dark border-primary text-start mx-auto shadow-lg text-light" style="max-width: 800px;">
+                        <div class="card-header bg-primary text-white fw-bold">
+                            <i class="fas fa-book-open me-2"></i>Definition
+                        </div>
+                        <div class="card-body text-light">
+                            <p class="mb-0" style="line-height: 1.8;">
+                                <strong>Full Stack Development</strong> is the end-to-end practice of designing, building, and deploying both user-facing interfaces and server-side infrastructure. It bridges frontend presentation, backend business logic, API integration, and persistent data storage to deliver a cohesive web application experience.
+                            </p>
+                            <p class="mt-3 mb-0" style="line-height: 1.8;">
+                                A full stack developer understands responsive UI, accessibility, application architecture, database design, and the workflow required to move features from prototype to production. This section demonstrates the complete full stack ecosystem and shows that all layers work together to support reliable, maintainable applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 1.1: Interactive Architecture Diagram -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6 mx-auto">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-project-diagram me-2"></i>Architecture Flow</h5>
+                        </div>
+                        <div class="demo-body bg-dark bg-opacity-50 rounded p-4">
+                            <div class="arch-flow d-flex justify-content-between align-items-center flex-wrap gap-3">
+                                <div class="arch-node client-node" onclick="highlightNode('client')">
+                                    <i class="fas fa-laptop-code fa-2x mb-2"></i>
+                                    <div>Client</div>
+                                    <small class="text-muted">Browser/Mobile</small>
+                                </div>
+                                <div class="arch-arrow text-muted">
+                                    <i class="fas fa-exchange-alt fa-2x"></i>
+                                    <div class="text-xs">HTTP/JSON</div>
+                                </div>
+                                <div class="arch-node server-node" onclick="highlightNode('server')">
+                                    <i class="fas fa-server fa-2x mb-2"></i>
+                                    <div>Server</div>
+                                    <small class="text-muted">Node/Python/PHP</small>
+                                </div>
+                                <div class="arch-arrow text-muted">
+                                    <i class="fas fa-exchange-alt fa-2x"></i>
+                                    <div class="text-xs">Query</div>
+                                </div>
+                                <div class="arch-node db-node" onclick="highlightNode('db')">
+                                    <i class="fas fa-database fa-2x mb-2"></i>
+                                    <div>Database</div>
+                                    <small class="text-muted">MySQL/Mongo</small>
+                                </div>
+                            </div>
+                            <div id="arch-desc" class="mt-4 text-center text-info font-monospace">
+                                Click a node to see its responsibility.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 1.2: Role Perspectives -->
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-user-tag me-2"></i>Role Perspectives</h5>
+                        </div>
+                        <div class="demo-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                    <div id="roleIcon" class="display-1 text-primary mb-2 transition-icon"><i class="fas fa-paint-brush"></i></div>
+                                    <h4 id="roleTitle" class="fw-bold">Frontend</h4>
+                                </div>
+                                <div class="col-md-8">
+                                    <p id="roleDesc" class="text-secondary mb-4">
+                                        Focuses on what the user sees. Handles UI/UX, HTML structure, CSS styling, and basic interactions. Works with frameworks like React, Vue, or Angular.
+                                    </p>
+                                    <button id="roleBtn" class="btn btn-outline-light w-100">Switch to Backend View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 2: HTML5
+         ========================================= -->
+    <section id="html-sec" class="py-5 bg-dark bg-opacity-25">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title"><i class="fab fa-html5 me-2 text-warning"></i>HTML5 Structure</h2>
+                    <div class="card bg-dark border-warning text-start mx-auto shadow-lg" style="max-width: 800px;">
+                        <div class="card-header bg-warning text-dark fw-bold">
+                            <i class="fas fa-book-open me-2"></i>Definition
+                        </div>
+                        <div class="card-body text-light">
+                            <p class="mb-0" style="line-height: 1.8;">
+                                <strong>HTML (HyperText Markup Language)</strong> is the standard language used to define the structure of content on the web. HTML5 adds modern, semantic tags that clarify the purpose of each content block, improving accessibility, maintainability, and search engine understanding.
+                            </p>
+                            <p class="mt-3 mb-0" style="line-height: 1.8;">
+                                This section highlights how semantic markup, forms, and native browser controls create a strong foundation for accessible and reliable interfaces without relying solely on styling or scripts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 2.1: Semantic vs. Non-Semantic -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5>Semantic Document</h5>
+                        </div>
+                        <div class="demo-body p-0">
+                            <div class="code-preview">
+                                <div class="code-header"><span>semantic.html</span></div>
+                                <pre><code class="language-html">&lt;article&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Blog Post Title&lt;/h1&gt;
+  &lt;/header&gt;
+  &lt;section&gt;
+    &lt;p&gt;Main content...&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;footer&gt;
+    &lt;time datetime="2023-10-01"&gt;Oct 1&lt;/time&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+                            </div>
+                        </div>
+                        <div class="demo-footer">
+                            <small class="text-success"><i class="fas fa-check-circle me-1"></i> Accessible & SEO Friendly</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5>Visual Output</h5>
+                        </div>
+                        <div class="demo-body p-4 d-flex justify-content-center">
+                            <article class="border border-secondary rounded p-3 w-100 bg-dark bg-opacity-25">
+                                <header class="border-bottom border-secondary pb-2 mb-2">
+                                    <h6 class="m-0 text-white">Blog Post Title</h6>
+                                </header>
+                                <section>
+                                    <p class="small text-muted m-0">Main content paragraph goes here...</p>
+                                </section>
+                                <footer class="border-top border-secondary pt-2 mt-2">
+                                    <time class="small text-secondary">Oct 1</time>
+                                </footer>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 2.2: Native HTML5 Inputs & Form Validation -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-check-circle me-2"></i>HTML5 Form Validation</h5>
+                        </div>
+                        <div class="demo-body p-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h6 class="text-primary mb-3">Interactive Form Example</h6>
+                                    <form class="needs-validation" id="htmlFormDemo" novalidate>
+                                        <!-- Text Input with Pattern -->
+                                        <div class="mb-3">
+                                            <label class="form-label small">Username (3-20 chars)</label>
+                                            <input type="text" class="form-control bg-dark text-white border-secondary" 
+                                                   pattern="^[a-zA-Z0-9]{3,20}$" required>
+                                            <div class="invalid-feedback">Username must be 3-20 alphanumeric characters.</div>
+                                        </div>
+
+                                        <!-- Email Input -->
+                                        <div class="mb-3">
+                                            <label class="form-label small">Email Address</label>
+                                            <input type="email" class="form-control bg-dark text-white border-secondary" required>
+                                            <div class="invalid-feedback">Please provide a valid email.</div>
+                                        </div>
+
+                                        <!-- Number Input with Range -->
+                                        <div class="mb-3">
+                                            <label class="form-label small">Age (18-100)</label>
+                                            <input type="number" class="form-control bg-dark text-white border-secondary" 
+                                                   min="18" max="100" required>
+                                            <div class="invalid-feedback">Age must be between 18 and 100.</div>
+                                        </div>
+
+                                        <!-- URL Input -->
+                                        <div class="mb-3">
+                                            <label class="form-label small">Portfolio URL</label>
+                                            <input type="url" class="form-control bg-dark text-white border-secondary" required>
+                                            <div class="invalid-feedback">Please provide a valid URL.</div>
+                                        </div>
+
+                                        <!-- Textarea -->
+                                        <div class="mb-3">
+                                            <label class="form-label small">Message (min 10 chars)</label>
+                                            <textarea class="form-control bg-dark text-white border-secondary" rows="3" minlength="10" required></textarea>
+                                            <div class="invalid-feedback">Message must be at least 10 characters.</div>
+                                        </div>
+
+                                        <!-- Checkbox -->
+                                        <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                            <label class="form-check-label" for="termsCheck">I agree to terms</label>
+                                            <div class="invalid-feedback">You must agree to proceed.</div>
+                                        </div>
+
+                                        <button class="btn btn-primary w-100" type="submit">Validate Form</button>
+                                    </form>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <h6 class="text-success mb-3">HTML5 Input Types</h6>
+                                    <div class="bg-dark bg-opacity-50 p-3 rounded border border-secondary">
+                                        <div class="mb-3">
+                                            <label class="form-label small text-muted">Date Picker</label>
+                                            <input type="date" class="form-control bg-dark text-white border-secondary" style="color-scheme: dark;">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small text-muted">Time Picker</label>
+                                            <input type="time" class="form-control bg-dark text-white border-secondary" style="color-scheme: dark;">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small text-muted">Color Picker</label>
+                                            <input type="color" class="form-control form-control-color w-100 bg-dark border-secondary" value="#6366f1" title="Choose your color">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small text-muted">Range Slider (0-100)</label>
+                                            <input type="range" class="form-range" min="0" max="100" value="75">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small text-muted">Search with Suggestions</label>
+                                            <input list="skills" class="form-control bg-dark text-white border-secondary" placeholder="Type skill...">
+                                            <datalist id="skills">
+                                                <option value="HTML5"></option>
+                                                <option value="CSS3"></option>
+                                                <option value="JavaScript"></option>
+                                                <option value="Bootstrap"></option>
+                                                <option value="Responsive Design"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 2.3: Live HTML Editor (Interactive Demo) -->
+            <div class="row g-4 mt-2 mb-5">
+                <div class="col-12">
+                    <div class="demo-card">
+                        <div class="demo-header d-flex justify-content-between align-items-center">
+                            <h5><i class="fas fa-laptop-code me-2"></i>Live HTML Editor (Interactive Demo)</h5>
+                            <span class="badge bg-success">Interactive</span>
+                        </div>
+                        <div class="demo-body p-0 d-flex flex-wrap" style="min-height: 250px;">
+                            <div class="col-md-6 p-4 bg-dark border-end border-secondary d-flex flex-column">
+                                <label class="text-muted small mb-2 text-uppercase fw-bold"><i class="fas fa-edit me-2"></i>Type HTML Code:</label>
+                                <textarea id="htmlEditorInput" class="form-control bg-dark text-info font-monospace border-secondary flex-grow-1" style="resize: none;">&lt;h3 style="color: #a855f7;"&gt;Hello World&lt;/h3&gt;
+&lt;button class="btn btn-primary mt-2"&gt;Click Me!&lt;/button&gt;</textarea>
+                            </div>
+                            <div class="col-md-6 p-4 text-dark" style="background-color: #1e293b;">
+                                <label class="text-muted small mb-2 text-uppercase fw-bold text-white"><i class="fas fa-eye me-2"></i>Live Output:</label>
+                                <div id="htmlEditorOutput" class="h-100 p-3 rounded bg-white shadow-sm overflow-auto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 3: CSS3 (Professional)
+         ========================================= -->
+    <section id="css-sec" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title"><i class="fab fa-css3-alt me-2 text-primary"></i>CSS3 Styling & Layout</h2>
+                    <div class="card bg-dark border-primary text-start mx-auto shadow-lg" style="max-width: 800px;">
+                        <div class="card-header bg-primary text-white fw-bold">
+                            <i class="fas fa-book-open me-2"></i>Definition
+                        </div>
+                        <div class="card-body text-light">
+                            <p class="mb-0" style="line-height: 1.8;">
+                                <strong>CSS (Cascading Style Sheets)</strong> defines the visual design, layout, spacing, and responsive behavior of a website. CSS3 expands this capability with variables, grid and flexbox layouts, advanced selectors, and animation techniques.
+                            </p>
+                            <p class="mt-3 mb-0" style="line-height: 1.8;">
+                                The examples below demonstrate how modern CSS can create polished interfaces, fluid layouts, and smooth transitions while maintaining a consistent theme across devices and screen sizes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 3.1: Advanced Flexbox & Grid -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6">
+                    <div class="demo-card">
+                        <div class="demo-header d-flex justify-content-between align-items-center">
+                            <h5>Flexbox Playground</h5>
+                            <span class="badge bg-success">Interactive</span>
+                        </div>
+                        <div class="demo-body p-4">
+                            <div class="mb-3 d-flex gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-info" onclick="document.getElementById('flexBox').style.justifyContent='flex-start'">Start</button>
+                                <button class="btn btn-sm btn-outline-info" onclick="document.getElementById('flexBox').style.justifyContent='center'">Center</button>
+                                <button class="btn btn-sm btn-outline-info" onclick="document.getElementById('flexBox').style.justifyContent='space-between'">Space Between</button>
+                            </div>
+                            <div id="flexBox" class="flex-playground d-flex justify-content-between align-items-center h-100 bg-dark rounded border border-secondary p-3" style="min-height: 150px; transition: all 0.3s ease;">
+                                <div class="box box-1">Flex 1</div>
+                                <div class="box box-2">Flex 2</div>
+                                <div class="box box-3">Flex 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5>CSS Grid Layout</h5>
+                        </div>
+                        <div class="demo-body p-4">
+                            <div class="grid-playground d-grid gap-2" style="grid-template-columns: 1fr 2fr; grid-template-rows: 60px 1fr 40px; height: 200px;">
+                                <div class="grid-item bg-primary bg-opacity-25 border border-primary rounded d-flex align-items-center justify-content-center">Header</div>
+                                <div class="grid-item bg-primary bg-opacity-25 border border-primary rounded d-flex align-items-center justify-content-center">Header Ext</div>
+                                <div class="grid-item bg-secondary bg-opacity-25 border border-secondary rounded d-flex align-items-center justify-content-center">Sidebar</div>
+                                <div class="grid-item bg-secondary bg-opacity-25 border border-secondary rounded d-flex align-items-center justify-content-center">Main Content</div>
+                                <div class="grid-item bg-dark border border-secondary rounded d-flex align-items-center justify-content-center col-span-2">Footer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 3.2: CSS Animations & Transforms -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-spinner me-2"></i>Animations & Transforms</h5>
+                        </div>
+                        <div class="demo-body p-4">
+                            <div class="row g-4">
+                                <!-- Rotate Animation -->
+                                <div class="col-md-4 text-center">
+                                    <div class="css-demo-box rotate-box" style="width: 80px; height: 80px; margin: 0 auto;"></div>
+                                    <small class="text-muted d-block mt-2">Continuous Rotation</small>
+                                </div>
+
+                                <!-- Scale & Bounce -->
+                                <div class="col-md-4 text-center">
+                                    <div class="css-demo-box bounce-box" style="width: 80px; height: 80px; margin: 0 auto;"></div>
+                                    <small class="text-muted d-block mt-2">Scale & Bounce</small>
+                                </div>
+
+                                <!-- Skew & Translate -->
+                                <div class="col-md-4 text-center">
+                                    <div class="css-demo-box slide-box" style="width: 80px; height: 80px; margin: 0 auto;"></div>
+                                    <small class="text-muted d-block mt-2">Slide Animation</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 3.3: Live Variable Editor (Advanced CSS Interaction) -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-sliders-h me-2"></i>Live CSS Variable Editor</h5>
+                        </div>
+                        <div class="demo-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-4">
+                                    <label class="form-label small text-primary">Primary Color</label>
+                                    <input type="range" class="form-range" id="colorRange" min="0" max="360" value="210">
+                                    <label class="form-label small text-warning">Border Radius (px)</label>
+                                    <input type="range" class="form-range" id="radiusRange" min="0" max="50" value="12">
+                                </div>
+                                <div class="col-md-8 d-flex justify-content-center">
+                                    <!-- This element changes based on JS -->
+                                    <div id="dynamicBox" class="demo-box-interactive d-flex align-items-center justify-content-center text-center p-5">
+                                        <div>
+                                            <h3>I am Dynamic</h3>
+                                            <p class="small text-muted">My styles are controlled by the sliders on the left.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 4: BOOTSTRAP FRAMEWORK
+         ========================================= -->
+    <section id="bs-sec" class="py-5 bg-dark bg-opacity-25">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title"><i class="fab fa-bootstrap me-2" style="color: #7952b3;"></i>Bootstrap 5 Framework</h2>
+                    <div class="card bg-dark border-secondary text-start mx-auto shadow-lg" style="max-width: 800px; border-color: #7952b3 !important;">
+                        <div class="card-header text-white fw-bold" style="background-color: #7952b3;">
+                            <i class="fas fa-book-open me-2"></i>Definition
+                        </div>
+                        <div class="card-body text-light">
+                            <p class="mb-0" style="line-height: 1.8;">
+                                <strong>Bootstrap</strong> is a comprehensive, mobile-first front-end framework that speeds up development by providing a consistent system of reusable components and utility classes. It includes a responsive grid, form controls, navigation patterns, and JavaScript plugins that work reliably across devices.
+                            </p>
+                            <p class="mt-3 mb-0" style="line-height: 1.8;">
+                                This section showcases Bootstrap's layout flexibility and prebuilt UI elements, making it easier to deliver professional, accessible interfaces with minimal custom CSS.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <!-- Demo 4.1: Component Grid -->
+                <div class="col-lg-4">
+                    <div class="demo-card h-100">
+                        <div class="demo-header">
+                            <h5>Cards & Badges</h5>
+                        </div>
+                        <div class="demo-body p-3">
+                            <div class="card bg-dark border-secondary mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card Title</h5>
+                                    <p class="card-text text-muted small">Some quick example text.</p>
+                                    <span class="badge bg-secondary">New</span>
+                                    <span class="badge bg-primary">Featured</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 4.2: Accordion -->
+                <div class="col-lg-4">
+                    <div class="demo-card h-100">
+                        <div class="demo-header">
+                            <h5>Accordion</h5>
+                        </div>
+                        <div class="demo-body p-2">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item bg-dark border-secondary">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-dark text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+                                            Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body text-muted small">Content for item one.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-dark border-secondary">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-dark text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
+                                            Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body text-muted small">Content for item two.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 4.3: Progress Bar -->
+                <div class="col-lg-4">
+                    <div class="demo-card h-100">
+                        <div class="demo-header">
+                            <h5>Progress Bars</h5>
+                        </div>
+                        <div class="demo-body p-4 d-flex flex-column justify-content-center gap-3">
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span>HTML</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 90%"></div>
+                            </div>
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span>CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Bootstrap Components -->
+            <div class="row g-4">
+                <!-- Demo 4.4: Alerts -->
+                <div class="col-lg-6">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-bell me-2"></i>Alert Components</h5>
+                        </div>
+                        <div class="demo-body p-3">
+                            <div class="alert alert-info border-0 bg-info bg-opacity-10 text-info mb-2" role="alert">
+                                <i class="fas fa-info-circle me-2"></i> Info Alert: Important information
+                            </div>
+                            <div class="alert alert-success border-0 bg-success bg-opacity-10 text-success mb-2" role="alert">
+                                <i class="fas fa-check-circle me-2"></i> Success Alert: Operation completed
+                            </div>
+                            <div class="alert alert-warning border-0 bg-warning bg-opacity-10 text-warning" role="alert">
+                                <i class="fas fa-exclamation-triangle me-2"></i> Warning Alert: Please verify
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 4.5: Buttons -->
+                <div class="col-lg-6">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-mouse me-2"></i>Button States & Styles</h5>
+                        </div>
+                        <div class="demo-body p-3">
+                            <div class="d-flex gap-2 flex-wrap">
+                                <button class="btn btn-primary">Primary</button>
+                                <button class="btn btn-secondary">Secondary</button>
+                                <button class="btn btn-success">Success</button>
+                                <button class="btn btn-danger">Danger</button>
+                                <button class="btn btn-warning text-dark">Warning</button>
+                                <button class="btn btn-outline-primary">Outline</button>
+                                <button class="btn btn-sm btn-primary">Small</button>
+                                <button class="btn btn-lg btn-success">Large</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 5: JAVASCRIPT (The Heavy Logic)
+         ========================================= -->
+    <section id="js-sec" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title"><i class="fab fa-js me-2 text-warning"></i>JavaScript Logic</h2>
+                    <div class="card bg-dark border-warning text-start mx-auto shadow-lg" style="max-width: 800px;">
+                        <div class="card-header bg-warning text-dark fw-bold">
+                            <i class="fas fa-book-open me-2"></i>Definition
+                        </div>
+                        <div class="card-body text-light">
+                            <p class="mb-0" style="line-height: 1.8;">
+                                <strong>JavaScript</strong> is the programming language that brings web pages to life by powering interactivity, event handling, and dynamic content updates. It enables asynchronous workflows, browser APIs, user input validation, and seamless communication with servers.
+                            </p>
+                            <p class="mt-3 mb-0" style="line-height: 1.8;">
+                                The demos below illustrate how JavaScript controls application state, manipulates the DOM, processes data, and creates responsive user experiences in modern web applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Demo 5.1: Complex State Manager (Todo List Logic) -->
+                <div class="col-lg-6">
+                    <div class="demo-card h-100">
+                        <div class="demo-header d-flex justify-content-between align-items-center">
+                            <h5>Task Logic</h5>
+                            <span class="badge bg-dark border border-secondary" id="taskCount">0 Tasks</span>
+                        </div>
+                        <div class="demo-body p-0">
+                            <div class="p-3 border-bottom border-secondary bg-dark bg-opacity-50">
+                                <div class="input-group">
+                                    <input type="text" id="taskInput" class="form-control bg-dark text-white border-secondary" placeholder="Add new task...">
+                                    <button class="btn btn-primary" id="addTaskBtn"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush bg-dark" id="taskList">
+                                <!-- Tasks injected here via JS -->
+                                <li class="list-group-item bg-transparent text-secondary text-center fst-italic py-4">No tasks yet...</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 5.2: DOM Manipulation & Forms -->
+                <div class="col-lg-6">
+                    <div class="demo-card h-100">
+                        <div class="demo-header">
+                            <h5>Interactive Form</h5>
+                        </div>
+                        <div class="demo-body p-4">
+                            <form id="contactForm" novalidate>
+                                <div class="mb-3">
+                                    <label class="form-label small">Email Address</label>
+                                    <input type="email" class="form-control bg-dark text-white border-secondary" id="emailInput" required>
+                                    <div class="invalid-feedback">Please provide a valid email.</div>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small">Password</label>
+                                    <input type="password" class="form-control bg-dark text-white border-secondary" id="passInput" required minlength="6">
+                                    <div class="invalid-feedback">Password must be 6+ chars.</div>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">Validate & Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 5.3: Array Methods & Filtering -->
+                <div class="col-12 mt-4">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-filter me-2"></i>Array Manipulation & Filtering</h5>
+                        </div>
+                        <div class="demo-body p-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="text-primary mb-3">Original Array</h6>
+                                    <div class="bg-dark bg-opacity-50 p-3 rounded border border-secondary" style="font-family: monospace; font-size: 0.9rem;">
+                                        <div id="originalArray"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-success mb-3">Filtered Results</h6>
+                                    <div class="d-flex gap-2 flex-wrap mb-3">
+                                        <button class="btn btn-sm btn-outline-primary" id="filterBtn">Filter >50</button>
+                                        <button class="btn btn-sm btn-outline-info" id="doubleBtn">Double Values</button>
+                                        <button class="btn btn-sm btn-outline-success" id="sumBtn">Sum All</button>
+                                        <button class="btn btn-sm btn-outline-warning" id="sortBtn">Sort</button>
+                                    </div>
+                                    <div class="bg-dark bg-opacity-50 p-3 rounded border border-secondary" style="font-family: monospace; font-size: 0.9rem;">
+                                        <div id="filteredResult"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 5.4: Loan Calculator (Math Logic) -->
+                <div class="col-12 mt-4">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-calculator me-2"></i>Financial Calculator</h5>
+                        </div>
+                        <div class="demo-body p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label>Loan Amount ($)</label>
+                                        <input type="number" id="loanAmount" class="form-control bg-dark text-white border-secondary" value="10000">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label>Interest Rate (%)</label>
+                                        <input type="number" id="interestRate" class="form-control bg-dark text-white border-secondary" value="5">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label>Years</label>
+                                        <input type="number" id="loanYears" class="form-control bg-dark text-white border-secondary" value="5">
+                                    </div>
+                                    <button id="calcBtn" class="btn btn-outline-primary w-100">Calculate</button>
+                                </div>
+                                <div class="col-md-8 d-flex align-items-center justify-content-center bg-dark bg-opacity-25 rounded">
+                                    <div class="text-center">
+                                        <h2 class="text-primary mb-0 display-4" id="monthlyPayment">$0.00</h2>
+                                        <p class="text-muted">Monthly Payment</p>
+                                        <div class="row mt-3 text-center small">
+                                            <div class="col-4 border-end border-secondary">
+                                                <div class="fw-bold text-white">Total Payment</div>
+                                                <div id="totalPayment" class="text-info">-</div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="fw-bold text-white">Total Interest</div>
+                                                <div id="totalInterest" class="text-danger">-</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 5.5: API Data Fetcher -->
+                <div class="col-12 mt-4">
+                    <div class="demo-card">
+                        <div class="demo-header d-flex justify-content-between align-items-center">
+                            <h5><i class="fas fa-network-wired me-2"></i>API Data Fetcher (async/await)</h5>
+                            <button id="fetchUsersBtn" class="btn btn-sm btn-outline-info">Fetch Users</button>
+                        </div>
+                        <div class="demo-body p-4">
+                            <!-- Spinner -->
+                            <div id="apiLoadingSpinner" class="text-center py-4" style="display: none;">
+                                <div class="spinner-border text-info" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="text-muted mt-2 mb-0">Fetching data from API...</p>
+                            </div>
+                            
+                            <!-- Container for cards -->
+                            <div id="userCardsContainer" class="row g-4">
+                                <div class="col-12 text-center text-muted py-4 fst-italic">
+                                    Click "Fetch Users" to load data from JSONPlaceholder API.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 5.6: Kanban Board (Drag & Drop API) -->
+                <div class="col-12 mt-4">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-columns me-2"></i>Kanban Board (HTML5 Drag & Drop API)</h5>
+                        </div>
+                        <div class="demo-body p-4">
+                            <div class="row g-4">
+                                <!-- Todo Column -->
+                                <div class="col-md-4">
+                                    <div class="kanban-column" data-drop-zone="todo">
+                                        <div class="kanban-header">To Do</div>
+                                        <div class="kanban-items">
+                                            <div class="kanban-item" draggable="true">Design UI Mockups</div>
+                                            <div class="kanban-item" draggable="true">Setup Database</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- In Progress Column -->
+                                <div class="col-md-4">
+                                    <div class="kanban-column" data-drop-zone="progress">
+                                        <div class="kanban-header border-bottom border-info text-info">In Progress</div>
+                                        <div class="kanban-items">
+                                            <div class="kanban-item" draggable="true">Develop API Endpoints</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Done Column -->
+                                <div class="col-md-4">
+                                    <div class="kanban-column" data-drop-zone="done">
+                                        <div class="kanban-header border-bottom border-success text-success">Done</div>
+                                        <div class="kanban-items">
+                                            <div class="kanban-item" draggable="true">Project Setup</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 5.7: HTML5 Canvas Chart -->
+                <div class="col-12 mt-4">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <h5><i class="fas fa-chart-bar me-2"></i>HTML5 Canvas Visualization</h5>
+                        </div>
+                        <div class="demo-body p-4 bg-dark bg-opacity-50">
+                            <canvas id="chartCanvas" style="width: 100%; height: 300px; max-width: 800px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+    <footer class="bg-black py-5 mt-5 border-top border-secondary">
+        <div class="container text-center">
+            <div class="mb-4">
+                <a href="#" class="text-secondary mx-2 fs-5"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-secondary mx-2 fs-5"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-secondary mx-2 fs-5"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-muted small mb-0">&copy; 2023 CET138 Student Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-dark text-white border-secondary">
+                <strong class="me-auto">System</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body bg-dark text-white border-top border-secondary" id="toastMessage">
+                Action successful.
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-secondary text-white">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title">Contact Developer</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is a static demo. In a real full stack app, this would send data to a server endpoint.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control bg-dark text-white border-secondary">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control bg-dark text-white border-secondary" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js?v=4"></script>
+</body>
+</html>
